@@ -4,6 +4,7 @@ using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEditor.iOS.Xcode;
 using UnityEditor.iOS.Xcode.Extensions.Custom;
+using UnityEngine;
 
 public class PostBuild_AddStickers : IPostprocessBuildWithReport
 {
@@ -22,13 +23,19 @@ public class PostBuild_AddStickers : IPostprocessBuildWithReport
 	{
 		if (report.summary.platform == BuildTarget.iOS)
 		{
-			if( Directory.Exists(stickersPath))
+			if(StickerSettings.GetOrCreateSettings().exportEnabled)
 				AddStickerExtension(stickersPath,report.summary.outputPath);
 		}
 	}
 	
 	public static void AddStickerExtension(string stickersPath, string pathToBuiltProject)
 	{
+		if(!Directory.Exists(stickersPath))
+		{
+			Debug.LogWarning($"Can't export stickers, path {stickersPath} not found");
+			return;
+		}
+			
 		string pbxPath = PBXProject.GetPBXProjectPath(pathToBuiltProject);
 
 		PBXProject pbxProject = new PBXProject();
