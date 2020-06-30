@@ -5,7 +5,7 @@ This package adds a sticker app extension to an iOS app exported from Unity. The
 ## Installation
 
 - In the Unity Package Manager, click "+" -> "Add package from git URL"
-- enter ```https://github.com/Playables/net.playables.stickers``` and confirm.
+- enter ```https://github.com/Playables/net.playables.stickers.git``` and confirm.
 
 ## Usage
 
