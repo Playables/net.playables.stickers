@@ -2,14 +2,14 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-class StickerSettings : ScriptableObject
+public class StickerSettings : ScriptableObject
 {
 	public const string k_MyCustomSettingsPath = "Assets/Editor/Stickers.asset";
 
 	public bool exportEnabled;
 	public string path;
 
-	internal static StickerSettings GetOrCreateSettings()
+	public static StickerSettings GetOrCreateSettings()
 	{
 			Directory.CreateDirectory(Path.GetDirectoryName(k_MyCustomSettingsPath));
 		

@@ -1,8 +1,6 @@
 {
-    "name": "Playables.Stickers.Editor.iOS",
-    "references": [
-        "GUID:09c07df90ce994f7aafb6aa64921ce4e"
-    ],
+    "name": "Playables.Stickers.Editor",
+    "references": [],
     "includePlatforms": [
         "Editor"
     ],
@@ -12,7 +10,6 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [
-        "UNITY_IOS"
     ],
     "versionDefines": [],
     "noEngineReferences": false
