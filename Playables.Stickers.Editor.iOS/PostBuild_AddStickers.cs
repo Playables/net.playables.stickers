@@ -10,12 +10,13 @@ public class PostBuild_AddStickers : IPostprocessBuildWithReport
 {
 	const string stickersPath = "Stickers"; // next to Assets
 	
-	//[MenuItem("Tools/Add Stickers to xcode project")]
-	//public static void AddStickers()
-	//{
-	//	AddStickerExtension(stickersPath,"Builds/ios");
-	//}
-
+#if STICKER_DEBUG
+	[MenuItem("Tools/Add Stickers to xcode project")]
+	public static void AddStickers()
+	{
+		AddStickerExtension(stickersPath,"Builds/ios");
+	}
+#endif
 
 	public int callbackOrder => 0;
 
