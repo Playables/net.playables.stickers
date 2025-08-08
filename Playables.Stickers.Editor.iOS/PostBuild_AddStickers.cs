@@ -57,7 +57,7 @@ public class PostBuild_AddStickers : IPostprocessBuildWithReport
 		var stickersAssetGuid = pbxProject.AddFile("Stickers/Stickers.xcassets", "Stickers/Stickers.xcassets");
 		pbxProject.AddFileToBuild(stickersGuid, stickersAssetGuid);
 
-		pbxProject.SetBuildProperty(stickersGuid, "IPHONEOS_DEPLOYMENT_TARGET", "10.0");
+		pbxProject.SetBuildProperty(stickersGuid, "IPHONEOS_DEPLOYMENT_TARGET", "12.0");
 		pbxProject.AddBuildProperty(stickersGuid, "TARGETED_DEVICE_FAMILY", "1,2");
 		pbxProject.AddBuildProperty(stickersGuid, "ASSETCATALOG_COMPILER_APPICON_NAME", "iMessage App Icon");
 		pbxProject.AddBuildProperty(stickersGuid, "ARCHS", "arm64");
