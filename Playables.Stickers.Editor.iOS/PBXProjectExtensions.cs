@@ -99,7 +99,7 @@ namespace UnityEditor.iOS.Xcode.Extensions.Custom
 			proj.AddSourcesBuildPhase(str);
 			proj.AddResourcesBuildPhase(str);
 			proj.AddFrameworksBuildPhase(str);
-			string sectionGuid = proj.AddCopyFilesBuildPhase(mainTargetGuid, "Embed App Extensions", "", "13");
+			string sectionGuid = proj.AddCopyFilesBuildPhaseBeforeTargetPostprocess(mainTargetGuid, "Embed App Extensions", "", "13");
 			proj.AddFileToBuildSection(mainTargetGuid, sectionGuid, proj.GetTargetProductFileRef(str));
 			proj.AddTargetDependency(mainTargetGuid, str);
 			return str;
